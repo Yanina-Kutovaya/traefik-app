@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   web:
-    image: kutovaiayp/traefik-app:1.0
+    image: kutovaiayp/traefik:app_v1
     expose:
       - 8000
     labels:
@@ -10,11 +10,15 @@ services:
       - "traefik.http.routers.fastapi.rule=Host('localhost')"
 
   traefik:
-    image: traefik:v2.9
+    image: kutovaiayp/traefik:toml_v1
     ports:
       - "80:80"
       - "8080:8080"
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "$PWD/docker/traefik/traefik.dev.toml:/etc/traefik/traefik.toml"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro" 
+
+  whoami:    
+    image: traefik/whoami
+    labels:
+      - "traefik.http.routers.whoami.rule=Host(`whoami.docker.localhost`)"  
     

@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   web:
-    image: kutovaiayp/traefik-app:1.0 
+    image: kutovaiayp/traefik:app_1
     expose:
       - 8000
     labels:
