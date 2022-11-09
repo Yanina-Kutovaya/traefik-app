@@ -9,6 +9,6 @@ setup(name='traefik-app',
       author='Yanina Kutovaya',
       author_email='kutovaiayp@yandex.ru',
       url='https://github.com/Yanina-Kutovaya/traefik-app.git',
-      package_dir={"": "service"},
-      packages=find_packages(where="service"),
+      package_dir={"": "src"},
+      packages=find_packages(where="src"),
      )
