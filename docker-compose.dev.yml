@@ -11,12 +11,13 @@ services:
 
   traefik:
     image: traefik:v2.9
+    
     ports:
       - "80:80"
       - "8080:8080"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro" 
-      - "$PWD/docker/traefik/traefik.dev.toml:/etc/traefik/traefik.toml"
+      - "$PWD/docker/traefik/traefik.dev.toml:/etc/traefik/"   
 
   whoami:    
     image: traefik/whoami
