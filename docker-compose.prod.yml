@@ -7,7 +7,7 @@ services:
       - 8000
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.fastapi.rule=Host(traefik.example.com')"
+      - "traefik.http.routers.fastapi.rule=Host(`traefik.example.com`)"
       - "traefik.http.routers.fastapi.tls=true"
       - "traefik.http.routers.fastapi.tls.certresolver=letsencrypt"
  

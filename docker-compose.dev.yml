@@ -7,7 +7,7 @@ services:
       - 8000
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.fastapi.rule=Host('localhost')"
+      - "traefik.http.routers.fastapi.rule=Host(`localhost`)"
 
   traefik:
     image: traefik:v2.9
@@ -17,10 +17,10 @@ services:
       - "8080:8080"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro" 
-      - "$PWD/docker/traefik/traefik.dev.toml:/etc/traefik/"   
+      - "$PWD/docker/traefik/traefik.dev.toml:/etc/traefik/traefik.toml"   
 
   whoami:    
     image: traefik/whoami
     labels:
-      - "traefik.http.routers.whoami.rule=Host('whoami.docker.localhost')"        
+      - "traefik.http.routers.whoami.rule=Host(`whoami.docker.localhost`)"           
     
