@@ -18,6 +18,6 @@
 
 [certificatesResolvers.letsencrypt.acme]
   email = "kutovaiayp@yandex.ru"
-  storage= "acme.json"
+  storage = "acme.json"
   [certificatesResolvers.letsencrypt.acme.httpChallenge]
     entryPoint = "web"
