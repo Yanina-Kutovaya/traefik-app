@@ -7,7 +7,7 @@ services:
       - 8000
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.fastapi.rule=Host(`traefik.sczl.ru`)"
+      - "traefik.http.routers.fastapi.rule=Host(`traefik-app.example.com`)"
       - "traefik.http.routers.fastapi.tls=true"
       - "traefik.http.routers.fastapi.tls.certresolver=letsencrypt"
  
@@ -17,5 +17,4 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "./acme.json:/acme.json"          
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"              
